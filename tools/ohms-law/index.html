@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ohm's Law Calculator – Tool Portal</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/theme.js"></script>
+  <script src="../../js/ohms-law.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-name" href="../../index.html">Tool Portal</a>
+      <button type="button" class="theme-toggle" aria-pressed="false">Switch to dark theme</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../../index.html">← Back to all tools</a>
+    <h1>Ohm's Law Calculator</h1>
+    <p class="lead">
+      Ohm's law links voltage, current and resistance: <strong>V = I × R</strong>.
+      Power is <strong>P = V × I</strong>.
+      Fill in any two values and leave the one you want to find empty.
+    </p>
+
+    <form id="ohms-form" class="tool-form" novalidate>
+      <div class="field-grid">
+        <div class="field">
+          <label for="voltage">Voltage <span class="unit">(V, volts)</span></label>
+          <input id="voltage" name="voltage" type="number" inputmode="decimal" step="any" min="0" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="current">Current <span class="unit">(I, amps)</span></label>
+          <input id="current" name="current" type="number" inputmode="decimal" step="any" min="0" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="resistance">Resistance <span class="unit">(R, ohms Ω)</span></label>
+          <input id="resistance" name="resistance" type="number" inputmode="decimal" step="any" min="0" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button type="submit" class="button button-primary">Calculate</button>
+        <button type="button" id="clear-button" class="button">Clear</button>
+      </div>
+    </form>
+
+    <!-- Results and error messages appear here. aria-live makes screen readers announce them. -->
+    <section id="result" class="result" aria-live="polite" hidden></section>
+  </main>
+</body>
+</html>
